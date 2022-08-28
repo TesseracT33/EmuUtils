@@ -47,6 +47,16 @@ export
 		*num ^= ~(1ull << pos);
 	}
 
+	constexpr u8 GetByte(const auto& obj, uint byte_index)
+	{
+		return *(reinterpret_cast<u8*>(&obj) + byte_index);
+	}
+
+	constexpr u8 SetByte(auto& obj, uint byte_index, u8 value)
+	{
+		*(reinterpret_cast<u8*>(&obj) + byte_index) = value;
+	}
+
 	/* Sign extends 'value' consisting of 'num_bits' bits to the width given by 'Int' */
 	template<std::integral Int, uint num_bits>
 	constexpr Int SignExtend(auto value)
