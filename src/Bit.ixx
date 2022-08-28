@@ -47,7 +47,7 @@ export
 		*num ^= ~(1ull << pos);
 	}
 
-	constexpr u8 GetByte(const auto& obj, uint byte_index)
+	constexpr u8 GetByte(auto& obj, uint byte_index)
 	{
 		return *(reinterpret_cast<u8*>(&obj) + byte_index);
 	}
