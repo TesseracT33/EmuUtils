@@ -52,7 +52,7 @@ export
 		return *(reinterpret_cast<u8*>(&obj) + byte_index);
 	}
 
-	constexpr u8 SetByte(auto& obj, uint byte_index, u8 value)
+	constexpr void SetByte(auto& obj, uint byte_index, u8 value)
 	{
 		*(reinterpret_cast<u8*>(&obj) + byte_index) = value;
 	}
