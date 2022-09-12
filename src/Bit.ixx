@@ -79,7 +79,7 @@ export
 		}
 		else {
 			using sInt = std::make_signed<Int>::type;
-			constexpr auto shift_amount = 8 * sizeof(Int) - num_bits;
+			constexpr static auto shift_amount = 8 * sizeof(Int) - num_bits;
 			auto signed_int = static_cast<sInt>(value);
 			return static_cast<Int>(static_cast<sInt>(signed_int << shift_amount) >> shift_amount);
 		}
