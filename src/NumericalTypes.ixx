@@ -20,5 +20,10 @@ export
 	using f32 = float;
 	using f64 = double;
 
+#if defined __GNUC__ || defined __clang__
+	using s128 = __int128;
+	using u128 = unsigned __int128;
+#endif
+
 	using std::size_t;
 }
