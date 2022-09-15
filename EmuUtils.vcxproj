@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Arithmetic.ixx" />
     <ClCompile Include="src\Bit.ixx" />
     <ClCompile Include="src\Files.ixx" />
     <ClCompile Include="src\Host.ixx" />

@@ -1,5 +1,6 @@
 export module Util;
 
+export import :Arithmetic;
 export import :Bit;
 export import :Files;
 export import :Host;
