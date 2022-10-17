@@ -3,6 +3,8 @@ export module Util:Misc;
 import :NumericalTypes;
 
 import <array>;
+import <concepts>;
+import <type_traits>;
 
 export
 {
@@ -28,5 +30,19 @@ export
 		std::array<T, size> arr{};
 		arr.fill(value);
 		return arr;
+	}
+
+
+	template<std::integral Int>
+	constexpr auto MakeSigned(Int x)
+	{
+		return static_cast<std::make_signed_t<Int>>(x);
+	}
+
+
+	template<std::integral Int>
+	constexpr auto MakeUnsigned(Int x)
+	{
+		return static_cast<std::make_unsigned_t<Int>>(x);
 	}
 }
