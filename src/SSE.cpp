@@ -62,7 +62,7 @@ __m128i _mm_mulhi_epu16_epi16(__m128i a, __m128i b)
 	   but where we have subtracted the first number if the second one is negative.
 	   Source: https://stackoverflow.com/questions/28807341/simd-signed-with-unsigned-multiplication-for-64-bit-64-bit-to-128-bit */
 	__m128i unsigned_prod = _mm_mulhi_epu16(a, b);
-	__m128i correction = _mm_mullo_epi16(a, _mm_srli_epi16(_mm_cmplt_epi16(b, m128i_all_zeroes), 15));
+	__m128i correction = _mm_mullo_epi16(a, _mm_srli_epi16(_mm_cmplt_epi16(b, m128i_zero), 15));
 	return _mm_sub_epi16(unsigned_prod, correction);
 }
 

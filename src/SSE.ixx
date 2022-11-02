@@ -28,7 +28,7 @@ export
 
 	/* Note: not marking these as 'inline' could lead to improper initialization on MSVC. */
 	inline const __m128i m128i_all_ones = _mm_set1_epi64x(s64(-1));
-	inline const __m128i m128i_all_zeroes = _mm_set1_epi64x(s64(0));
-	inline const __m128i m128i_epi16_sign_mask = _mm_set1_epi16(s16(0x8000));
-	inline const __m128i m128i_epi16_all_lanes_1 = _mm_set1_epi16(s16(1));
+	inline const __m128i m128i_zero = _mm_setzero_si128();
+	inline const __m128i m128i_epi16_sign_mask = _mm_set1_epi16(0x8000);
+	inline const __m128i m128i_one = _mm_set1_epi16(1);
 } 
