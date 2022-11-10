@@ -6,75 +6,67 @@ export namespace Host
 {
 	constexpr std::endian endianness = std::endian::native;
 
-	constexpr bool has_sse = [] { /* SSE 4.2 */
+	constexpr bool has_sse =/* SSE 4.2 */
 #ifdef _MSC_VER
 #ifdef _M_AMD64 /* TODO: not sure how to check for SSE >= 3 specifically on x64. __cpuid is not constexpr. */
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
 #else
 #ifdef __SSE4_2__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
 #endif
-	}();
 
-	constexpr bool has_avx = [] {
+	constexpr bool has_avx =
 #ifdef __AVX__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 
-	constexpr bool has_avx2 = [] {
+	constexpr bool has_avx2 = 
 #ifdef __AVX2__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 
-	constexpr bool has_avx512bw = [] {
+	constexpr bool has_avx512bw = 
 #ifdef __AVX512BW__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 
-	constexpr bool has_avx512cd = [] {
+	constexpr bool has_avx512cd = 
 #ifdef __AVX512CD__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 
-	constexpr bool has_avx512dq = [] {
+	constexpr bool has_avx512dq = 
 #ifdef __AVX512DQ__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 
-	constexpr bool has_avx512f = [] {
+	constexpr bool has_avx512f = 
 #ifdef __AVX512F__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 
-	constexpr bool has_avx512vl = [] {
+	constexpr bool has_avx512vl = 
 #ifdef __AVX512VL__
-		return true;
+		true;
 #else
-		return false;
+		false;
 #endif
-	}();
 }
